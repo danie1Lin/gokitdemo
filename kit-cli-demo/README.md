@@ -1,0 +1,4 @@
+
+```
+kit new service hello
+```
