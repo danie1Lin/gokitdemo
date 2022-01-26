@@ -6,3 +6,5 @@ Because the go package location is changed, no longer storing in `$GOPATH/src`.
 but truss is still using that path.
 
 - [ ] try using buf to acquire deps.
+
+2. need to modify the api response case json:"Event,omitempty"`

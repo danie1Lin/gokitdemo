@@ -11,9 +11,19 @@ func NewService() pb.LiveEventServer {
 	return liveeventService{}
 }
 
-type liveeventService struct{}
+type liveeventService struct {
+	repo Repository
+}
 
 func (s liveeventService) CreateEvent(ctx context.Context, in *pb.CreateEventRequest) (*pb.CreateEventResponse, error) {
 	var resp pb.CreateEventResponse
+	event := protoToModel(in.Event)
+	if event != nil {
+		return nil, ErrInvalidEventArgument
+	}
+	if err := s.repo.CreateEvent(event); err != nil {
+		return nil, err
+	}
+	resp.Event = modelToProto(event)
 	return &resp, nil
 }
