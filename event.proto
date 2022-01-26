@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package event;
+
+import "github.com/metaverse/truss/deftree/googlethirdparty/annotations.proto";
+
+// WellKnow Type: https://developers.google.com/protocol-buffers/docs/reference/google.protobuf
+// JSON Mapping: https://developers.google.com/protocol-buffers/docs/proto3#json
+import "google/protobuf/wrappers.proto";
+
+service LiveEvent {
+  rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse) {
+    option (google.api.http) = {
+      post: "/events"
+      additional_bindings {
+        get: "/events/"
+      }
+    };
+  }
+}
+
+message CreateEventRequest {
+  Event Event = 1;
+}
+
+message CreateEventResponse {
+  Event Event = 1;
+}
+
+message Event {
+  string Name = 1;
+  google.protobuf.Int32Value EndTime = 2; 
+  repeated Region RestrictionRegions = 3;
+  enum Region {
+    TW = 0;
+    JP = 1;
+  }
+}
