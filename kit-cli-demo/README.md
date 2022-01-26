@@ -20,4 +20,7 @@ INFO[0000] Add it to cmd/service/service.go#getEndpointMiddleware()
 
 // For client
 kit g c hello
+
+// docker
+kit g d
 ```
