@@ -3,6 +3,7 @@ package handlers
 import (
 	pb "trussdemo"
 	"trussdemo/liveevent-service/svc"
+	"trussdemo/pkg/auth"
 )
 
 // WrapEndpoints accepts the service's entire collection of endpoints, so that a
@@ -12,7 +13,8 @@ import (
 // Note that the final middleware wrapped will be the outermost middleware
 // (i.e. applied first)
 func WrapEndpoints(in svc.Endpoints) svc.Endpoints {
-
+	in.CreateEventEndpoint = auth.RBACMiddleware(in.CreateEventEndpoint)
+	in.CreateEventEndpoint = auth.ParseJWTMiddleware()(in.CreateEventEndpoint)
 	// Pass a middleware you want applied to every endpoint.
 	// optionally pass in endpoints by name that you want to be excluded
 	// e.g.

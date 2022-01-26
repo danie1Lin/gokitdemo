@@ -29,6 +29,7 @@ import (
 
 	// This service
 	pb "trussdemo"
+	"trussdemo/pkg/auth"
 )
 
 const contentType = "application/json; charset=utf-8"
@@ -51,6 +52,7 @@ func MakeHTTPHandler(endpoints Endpoints, responseEncoder httptransport.EncodeRe
 		responseEncoder = EncodeHTTPGenericResponse
 	}
 	serverOptions := []httptransport.ServerOption{
+		httptransport.ServerBefore(auth.AddAuthorizationToJWTTokenContext),
 		httptransport.ServerBefore(headersToContext),
 		httptransport.ServerErrorEncoder(errorEncoder),
 		httptransport.ServerAfter(httptransport.SetContentType(contentType)),

@@ -1,5 +1,10 @@
 # Go kit developing flow by using truss
 
+## 評估
+1. 決定 project structure
+2. 定義標準 error response 各式，http and grpc
+
+
 ## Some Issues 
 1. In latest Go version 1.17, truss will throw error like: `Imported file not found`.
 Because the go package location is changed, no longer storing in `$GOPATH/src`. 
