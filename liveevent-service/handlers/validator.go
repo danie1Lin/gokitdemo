@@ -9,7 +9,7 @@ func validateCreateEventRequest(e *pb.CreateEventRequest) error {
 		return ErrInvalidEventArgument
 	}
 	if len(e.Event.Name) < 3 || len(e.Event.Name) > 20 {
-		return ErrInvalidEventNameLengthArgument
+		return InvalidEventError(1, "length must between 3 and 20", "name")
 	}
 	return nil
 }
