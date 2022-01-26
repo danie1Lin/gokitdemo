@@ -5,6 +5,10 @@ type Error struct {
 	statusCode int
 }
 
+func (e *Error) StatusCode() int {
+	return e.statusCode
+}
+
 func WithStatusCode(e error, code int) error {
 	return &Error{error: e, statusCode: code}
 }
