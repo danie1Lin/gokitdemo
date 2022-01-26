@@ -2,8 +2,7 @@
 
 ## 評估
 1. 決定 project structure
-2. 定義標準 error response 各式，http and grpc
-
+2. 定義標準 error response 格式，http and Grpc
 
 ## Some Issues 
 1. In latest Go version 1.17, truss will throw error like: `Imported file not found`.

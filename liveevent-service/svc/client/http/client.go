@@ -24,8 +24,8 @@ import (
 	"github.com/pkg/errors"
 
 	// This Service
-	pb "trussdemo"
-	"trussdemo/liveevent-service/svc"
+	pb "github.com/danie1Lin/gokitdemo"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/svc"
 )
 
 var (

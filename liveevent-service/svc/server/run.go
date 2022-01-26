@@ -18,10 +18,10 @@ import (
 	"google.golang.org/grpc"
 
 	// This Service
-	pb "trussdemo"
-	"trussdemo/liveevent-service/handlers"
-	"trussdemo/liveevent-service/repository"
-	"trussdemo/liveevent-service/svc"
+	pb "github.com/danie1Lin/gokitdemo"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/handlers"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/repository"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/svc"
 )
 
 var DefaultConfig svc.Config

@@ -1,4 +1,4 @@
-module trussdemo
+module github.com/danie1Lin/gokitdemo
 
 go 1.13
 

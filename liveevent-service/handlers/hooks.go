@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"trussdemo/liveevent-service/svc"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/svc"
 )
 
 func InterruptHandler(errc chan<- error) {

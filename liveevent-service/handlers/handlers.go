@@ -3,7 +3,7 @@ package handlers
 import (
 	"context"
 
-	pb "trussdemo"
+	pb "github.com/danie1Lin/gokitdemo"
 )
 
 // NewService returns a naïve, stateless implementation of Service.

@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	pb "trussdemo"
-	"trussdemo/liveevent-service/svc"
-	"trussdemo/pkg/auth"
+	pb "github.com/danie1Lin/gokitdemo"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/svc"
+	"github.com/danie1Lin/gokitdemo/pkg/auth"
 )
 
 // WrapEndpoints accepts the service's entire collection of endpoints, so that a

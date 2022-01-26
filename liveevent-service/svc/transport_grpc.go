@@ -17,7 +17,7 @@ import (
 	grpctransport "github.com/go-kit/kit/transport/grpc"
 
 	// This Service
-	pb "trussdemo"
+	pb "github.com/danie1Lin/gokitdemo"
 )
 
 // MakeGRPCServer makes a set of endpoints available as a gRPC LiveEventServer.

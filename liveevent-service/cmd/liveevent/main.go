@@ -9,8 +9,8 @@ import (
 	"flag"
 
 	// This Service
-	"trussdemo/liveevent-service/handlers"
-	"trussdemo/liveevent-service/svc/server"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/handlers"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/svc/server"
 )
 
 func main() {

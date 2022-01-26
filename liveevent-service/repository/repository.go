@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	"trussdemo/liveevent-service/handlers"
+	"github.com/danie1Lin/gokitdemo/liveevent-service/handlers"
 )
 
 type Repository struct{}

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	pb "trussdemo"
+	pb "github.com/danie1Lin/gokitdemo"
 )
 
 func validateCreateEventRequest(e *pb.CreateEventRequest) error {

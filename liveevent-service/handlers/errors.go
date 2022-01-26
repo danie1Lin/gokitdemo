@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"fmt"
-	"trussdemo/errors"
+	"github.com/danie1Lin/gokitdemo/errors"
 )
 
 var (

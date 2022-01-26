@@ -28,8 +28,8 @@ import (
 	"github.com/pkg/errors"
 
 	// This service
-	pb "trussdemo"
-	"trussdemo/pkg/auth"
+	pb "github.com/danie1Lin/gokitdemo"
+	"github.com/danie1Lin/gokitdemo/pkg/auth"
 )
 
 const contentType = "application/json; charset=utf-8"

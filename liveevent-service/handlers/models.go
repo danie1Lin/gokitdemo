@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	proto "trussdemo"
-	"trussdemo/prototool"
+	proto "github.com/danie1Lin/gokitdemo"
+	"github.com/danie1Lin/gokitdemo/prototool"
 )
 
 type Event struct {
