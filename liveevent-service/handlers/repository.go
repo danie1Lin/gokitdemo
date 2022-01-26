@@ -1,6 +1,8 @@
 package handlers
 
+import "context"
+
 // gomock...
 type Repository interface {
-	CreateEvent(event *Event) error
+	CreateEvent(ctx context.Context, event *Event) error
 }

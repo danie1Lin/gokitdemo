@@ -20,6 +20,7 @@ import (
 	// This Service
 	pb "trussdemo"
 	"trussdemo/liveevent-service/handlers"
+	"trussdemo/liveevent-service/repository"
 	"trussdemo/liveevent-service/svc"
 )
 
@@ -69,7 +70,7 @@ func NewEndpoints(service pb.LiveEventServer) svc.Endpoints {
 // Run starts a new http server, gRPC server, and a debug server with the
 // passed config and logger
 func Run(cfg svc.Config) {
-	service := handlers.NewService()
+	service := handlers.NewService(repository.NewRepository())
 	endpoints := NewEndpoints(service)
 
 	if cfg.GenericHTTPResponseEncoder == nil {

@@ -7,8 +7,10 @@ import (
 )
 
 // NewService returns a naïve, stateless implementation of Service.
-func NewService() pb.LiveEventServer {
-	return liveeventService{}
+func NewService(r Repository) pb.LiveEventServer {
+	return liveeventService{
+		repo: r,
+	}
 }
 
 type liveeventService struct {
@@ -17,11 +19,11 @@ type liveeventService struct {
 
 func (s liveeventService) CreateEvent(ctx context.Context, in *pb.CreateEventRequest) (*pb.CreateEventResponse, error) {
 	var resp pb.CreateEventResponse
-	event := protoToModel(in.Event)
-	if event != nil {
-		return nil, ErrInvalidEventArgument
+	if err := validateCreateEventRequest(in); err != nil {
+		return nil, err
 	}
-	if err := s.repo.CreateEvent(event); err != nil {
+	event := protoToModel(in.Event)
+	if err := s.repo.CreateEvent(ctx, event); err != nil {
 		return nil, err
 	}
 	resp.Event = modelToProto(event)
