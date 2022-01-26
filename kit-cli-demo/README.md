@@ -16,4 +16,8 @@ kit g m hi -s hello
 kit g m hi -s hello -e
 INFO[0000] Do not forget to append your endpoint middleware to your service middlewares
 INFO[0000] Add it to cmd/service/service.go#getEndpointMiddleware()
+
+
+// For client
+kit g c hello
 ```
