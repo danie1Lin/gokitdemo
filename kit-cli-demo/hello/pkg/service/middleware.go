@@ -29,3 +29,20 @@ func (l loggingMiddleware) Foo(ctx context.Context, req FooRequest) (resp FooRes
 	}()
 	return l.next.Foo(ctx, req)
 }
+
+type hiMiddleware struct {
+	next HelloService
+}
+
+// HiMiddleware returns a HelloService Middleware.
+func HiMiddleware() Middleware {
+	return func(next HelloService) HelloService {
+		return &hiMiddleware{next}
+	}
+
+}
+func (h hiMiddleware) Foo(ctx context.Context, req FooRequest) (resp FooResponse, err error) {
+	// Implement your middleware logic here
+
+	return h.next.Foo(ctx, req)
+}
