@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "hello/pkg/grpc/pb";
+
+
+//The Hello service definition.
+service Hello {
+ rpc Foo (FooRequest) returns (FooReply);
+}
+message FooRequest {}
+message FooReply {}

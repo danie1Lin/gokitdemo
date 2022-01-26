@@ -2,8 +2,9 @@ package endpoint
 
 import (
 	"context"
-	endpoint "github.com/go-kit/kit/endpoint"
 	service "hello/pkg/service"
+
+	endpoint "github.com/go-kit/kit/endpoint"
 )
 
 // FooRequest collects the request parameters for the Foo method.
